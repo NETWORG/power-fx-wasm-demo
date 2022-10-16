@@ -34,3 +34,12 @@ jobs:
     - name: Build React
       run: npm run build
       working-directory: ./Frontend
+    - name: Copy WASM output to React
+      run: cp -R ./PowerFxWasm/bin/Release/net7.0/wwwroot/* ./Frontend/build
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ../Frontend/build
+        user_name: 'github-actions[bot]'
+        user_email: 'github-actions[bot]@users.noreply.github.com'
