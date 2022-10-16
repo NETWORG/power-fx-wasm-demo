@@ -21,9 +21,9 @@ jobs:
       with:
         dotnet-version: 7.0.100-rc.2.22477.23
     - name: Restore WASM dependencies
-      run: dotnet restore PowerFxWasm --configuration Release
+      run: dotnet restore PowerFxWasm
     - name: Build WASM
-      run: dotnet build --no-restore
+      run: dotnet build PowerFxWasm --no-restore  --configuration Release
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
