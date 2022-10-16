@@ -1,0 +1,33 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.100-rc.2.22477.23
+    - name: Restore WASM dependencies
+      run: dotnet restore PowerFxWasm --configuration Release
+    - name: Build WASM
+      run: dotnet build --no-restore
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+    - name: Restore Frontend Dependencies
+      run: npm install
+      working-directory: ./Frontend
+    - name: Build React
+      run: npm run build
+      working-directory: ./Frontend
