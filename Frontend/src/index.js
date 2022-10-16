@@ -11,7 +11,7 @@ const rootElement = document.getElementById('root');
 
 const script = document.createElement('script');
 script.type = 'text/javascript';
-script.src = 'http://localhost:7080/_framework/blazor.webassembly.js';
+script.src = `${process.env.REACT_APP_PFX_WASM_HOST}/_framework/blazor.webassembly.js`;
 script.setAttribute("autostart", "false");
 script.crossOrigin = "anonymous";
 script.onload = async () => {
