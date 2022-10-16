@@ -1,5 +1,7 @@
 > WIP, details TBD
 
+Based on: https://github.com/microsoft/power-fx-host-samples/tree/main/Samples/WebDemo
+
 # Run locally
 
 1. Build `PowerFxWasm` project
