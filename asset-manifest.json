@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/power-fx-wasm-demo/static/css/main.9957b4d8.css",
-    "main.js": "/power-fx-wasm-demo/static/js/main.157aaeac.js",
+    "main.js": "/power-fx-wasm-demo/static/js/main.1d73879f.js",
     "static/media/codicon.ttf": "/power-fx-wasm-demo/static/media/codicon.68664da4962ed33db33e.ttf",
     "index.html": "/power-fx-wasm-demo/index.html",
     "main.9957b4d8.css.map": "/power-fx-wasm-demo/static/css/main.9957b4d8.css.map",
-    "main.157aaeac.js.map": "/power-fx-wasm-demo/static/js/main.157aaeac.js.map"
+    "main.1d73879f.js.map": "/power-fx-wasm-demo/static/js/main.1d73879f.js.map"
   },
   "entrypoints": [
     "static/css/main.9957b4d8.css",
-    "static/js/main.157aaeac.js"
+    "static/js/main.1d73879f.js"
   ]
 }
