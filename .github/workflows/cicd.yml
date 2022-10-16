@@ -29,9 +29,7 @@ jobs:
       run: npm install
       working-directory: ./Frontend
     - name: Build React
-      run: CI=false npm run build
-      env:
-        REACT_APP_PFX_WASM_HOST: "/"
+      run: REACT_APP_PFX_WASM_HOST=/ CI=false npm run build
       working-directory: ./Frontend
     - name: Copy WASM output to React
       run: cp -R ./PowerFxWasm/bin/Release/net7.0/wwwroot/* ./Frontend/build
