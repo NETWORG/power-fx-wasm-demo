@@ -2,6 +2,7 @@
   "name": "project1",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://networg.github.io/power-fx-wasm-demo/",
   "dependencies": {
     "@fluentui/react-icons-mdl2": "1.1.1",
     "@microsoft/power-fx-formulabar": "2.1.7",
