@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  REACT_APP_PFX_WASM_HOST: "/"
-
 jobs:
   build:
 
@@ -33,6 +30,8 @@ jobs:
       working-directory: ./Frontend
     - name: Build React
       run: CI=false npm run build
+      env:
+        REACT_APP_PFX_WASM_HOST: "/"
       working-directory: ./Frontend
     - name: Copy WASM output to React
       run: cp -R ./PowerFxWasm/bin/Release/net7.0/wwwroot/* ./Frontend/build
