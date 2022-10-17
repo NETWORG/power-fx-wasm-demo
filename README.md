@@ -1,5 +1,7 @@
 > WIP, details TBD
 
+Click here for live [**DEMO**](https://networg.github.io/power-fx-wasm-demo/).
+
 Based on: https://github.com/microsoft/power-fx-host-samples/tree/main/Samples/WebDemo
 
 Blog post: https://hajekj.net/2022/10/17/power-fx-in-javascript/
