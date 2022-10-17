@@ -33,6 +33,7 @@ jobs:
     - name: Add homepage to package.json
       uses: jaywcjlove/github-action-package@main
       with:
+        path: ./Frontend/package.json
         data: |
           {
             "homepage": "https://networg.github.io/power-fx-wasm-demo/"
