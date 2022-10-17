@@ -21,6 +21,8 @@ jobs:
       run: dotnet restore PowerFxWasm
     - name: Build WASM
       run: dotnet build PowerFxWasm --no-restore  --configuration Release
+    - name: Publish WASM
+      run: dotnet publish PowerFxWasm --no-restore --no-build --configuration Release
     - name: Use Node.js
       uses: actions/setup-node@v3
       with:
@@ -28,11 +30,18 @@ jobs:
     - name: Restore Frontend Dependencies
       run: npm install
       working-directory: ./Frontend
+    - name: Add homepage to package.json
+      uses: jaywcjlove/github-action-package@main
+      with:
+        data: |
+          {
+            "homepage": "https://networg.github.io/power-fx-wasm-demo/"
+          }
     - name: Build React
       run: NODE_ENV=production CI=false npm run build
       working-directory: ./Frontend
     - name: Copy WASM output to React
-      run: cp -R ./PowerFxWasm/bin/Release/net7.0/wwwroot/* ./Frontend/build
+      run: cp -R ./PowerFxWasm/bin/Release/net7.0/publish/wwwroot/* ./Frontend/build
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
